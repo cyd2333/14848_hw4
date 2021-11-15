@@ -1,0 +1,11 @@
+hadoop jar /usr/lib/hadoop/hadoop-streaming.jar \
+-file mapper.py -mapper 'python mapper.py' \
+-file reducer.py -reducer 'python reducer.py' \
+-file reducer.py -com
+-input /inputData/* \
+-output /outputFolder
+
+
+hadoop fs -getmerge /outputFolder hw4Result
+
+cp hw4Result 
